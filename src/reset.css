@@ -1,0 +1,113 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+button {
+  margin: 0;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+/* Adjust line heights */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 0.9;
+}
+
+/* Remove list styles on ul, ol elements with a class */
+:where(ul[role="list"]),
+:where(ol[role="list"]) {
+  padding-inline: 0;
+  list-style-type: none;
+}
+
+/* Set core body defaults */
+body {
+  min-block-size: 100vh;
+  overflow-y: scroll;
+  background-color: #fff;
+  line-height: 1.6;
+  color: #000;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  background-color: red;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-inline-size: 100%;
+}
+
+/* Preserve aspect ratio */
+img[width][height] {
+  block-size: auto;
+}
+
+/* Let SVG scale without boundaries */
+img[src$=".svg"] {
+  block-size: auto;
+  max-inline-size: 100%;
+  max-inline-size: none;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  overflow-wrap: break-word;
+  font: inherit;
+}
+
+/* Add space for anchor links */
+[id] {
+  scroll-margin-top: 2ex;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
