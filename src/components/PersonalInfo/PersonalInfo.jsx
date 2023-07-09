@@ -19,7 +19,6 @@ function PersonalInfo({ formData, setFormData }) {
           type="text"
           name="name"
           placeholder="Dave Henson"
-          required={true}
           value={formData.name}
           onChange={handleChange}
         >
@@ -30,7 +29,6 @@ function PersonalInfo({ formData, setFormData }) {
           type="email"
           name="email"
           placeholder="dave.henson@gmail.com"
-          required={true}
           value={formData.email}
           onChange={handleChange}
         >
@@ -41,7 +39,6 @@ function PersonalInfo({ formData, setFormData }) {
           type="tel"
           name="phone"
           placeholder="0744 2260071"
-          required={true}
           value={formData.phone}
           onChange={handleChange}
         >

@@ -5,11 +5,13 @@ export const StepContext = React.createContext();
 function StepProvider({ children }) {
   const [step, setStep] = React.useState(1);
 
-  function incrementStep() {
+  function incrementStep(event) {
+    event.preventDefault();
     setStep(step + 1);
   }
 
-  function decrementStep() {
+  function decrementStep(event) {
+    event.preventDefault();
     setStep(step - 1);
   }
 

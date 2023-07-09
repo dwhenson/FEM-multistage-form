@@ -1,6 +1,6 @@
 TODO
 
-- Add custom hooks - useToggle, useSessionStorage
+- Add custom hooks - useSessionStorage
 
 CHECK
 
