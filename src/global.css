@@ -1,9 +1,8 @@
 body {
-  background-color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-200);
   font-family: var(--ff-body);
   font-size: var(--step-0);
   font-weight: 400;
-  text-align: center;
   color: var(--clr-primary-400);
 }
 
@@ -25,7 +24,17 @@ h3 {
   font-size: var(--step-1);
 }
 
-:focus-visible {
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  margin-block-end: 1rem;
+  color: var(--clr-neutral-500);
+}
+
+/* :focus-visible {
   opacity: 1 !important;
   outline: 4px solid var(--clr-primary-300);
   outline-offset: 4px;
@@ -33,4 +42,4 @@ h3 {
 
 :focus:not(:focus-visible) {
   outline: transparent;
-}
+} */

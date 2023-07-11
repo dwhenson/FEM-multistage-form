@@ -9,6 +9,8 @@ import FormNavigation from "../FormNavigation";
 
 import { StepContext } from "../StepProvider/StepProvider";
 
+import styles from "./Form.module.css";
+
 function Form() {
   const { step } = React.useContext(StepContext);
   const [formData, setFormData] = React.useState({
@@ -22,7 +24,7 @@ function Form() {
 
   return (
     <ValidityProvider>
-      <form>
+      <form className={styles.form}>
         {step === 1 && (
           <PersonalInfo formData={formData} setFormData={setFormData} />
         )}

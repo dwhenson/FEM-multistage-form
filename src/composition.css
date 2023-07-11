@@ -13,3 +13,37 @@
 .align-content > * {
   grid-column: 2;
 }
+
+/* https://every-layout.dev/layouts/stack/ */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block-start: 0;
+}
+
+.stack > * + * {
+  margin-block-start: var(--bespoke-space, var(--space-m));
+}
+
+/* https://every-layout.dev/layouts/sidebar/ */
+
+.withSideBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.withSideBar > :first-child {
+  flex-grow: 1;
+}
+
+.withSideBar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 50%;
+}

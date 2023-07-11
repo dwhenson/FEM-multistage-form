@@ -1,0 +1,8 @@
+.navigationWrapper {
+  display: flex;
+  margin-block-start: var(--space-3xl);
+}
+
+.navigationWrapper button:last-of-type {
+  margin-inline-start: auto;
+}

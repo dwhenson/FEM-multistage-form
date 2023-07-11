@@ -13,20 +13,37 @@ function Input({
   value,
   onChange,
 }) {
-  const { isValid, setIsValid } = React.useContext(ValidityContext);
+  const { isValid, setIsValid, setIsDisabled } =
+    React.useContext(ValidityContext);
   const id = crypto.randomUUID().slice(0, 6);
 
   function checkValid(event) {
+    // Simple validation to check if input is completed
     if (event.target.value.trim() === "") {
       event.target.setAttribute("required", true);
-      setIsValid(false);
+      const newIsValid = { ...isValid };
+      newIsValid[event.target.name].valid = false;
+      newIsValid[event.target.name].verified = true;
+      setIsValid(newIsValid);
     } else {
-      setIsValid(true);
+      const newIsValid = { ...isValid };
+      newIsValid[event.target.name].valid = true;
+      newIsValid[event.target.name].verified = true;
+      setIsValid(newIsValid);
+    }
+    // Check if every input has been completed
+    if (
+      Object.values(isValid).every((validity) => validity.valid === true) &&
+      Object.values(isValid).every((validity) => validity.verified === true)
+    ) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
     }
   }
 
   return (
-    <div>
+    <div className={styles.InputWrapper}>
       <Label.Root htmlFor={id}>{children}</Label.Root>
       <input
         type={type}
@@ -36,8 +53,13 @@ function Input({
         value={value}
         onChange={onChange}
         onBlur={checkValid}
+        className={styles.Input}
       />
-      {!isValid && <p>Please enter your {children.toLowerCase()}.</p>}
+      {isValid[name].verified && !isValid[name].valid && (
+        <p className={styles.errorMessage}>
+          Please enter your {children.toLowerCase()}
+        </p>
+      )}
     </div>
   );
 }

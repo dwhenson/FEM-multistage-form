@@ -1,7 +1,36 @@
-input:valid {
-  border: 2px solid black;
+.InputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
 }
 
-input:invalid {
-  border: 2px dashed red;
+.Input {
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--clr-neutral-500);
+  border-radius: 0.25rem;
+  /* transition: border 250ms ease-in; */
+  font-weight: 700;
+}
+
+.Input:is(:hover, :focus) {
+  border: 1px solid var(--clr-primary-300);
+}
+
+.Input:invalid {
+  border: 1px solid var(--clr-accent-100);
+}
+
+.Input::placeholder {
+  font-weight: 400;
+  color: var(--clr-neutral-500);
+}
+
+.errorMessage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--clr-accent-100);
 }

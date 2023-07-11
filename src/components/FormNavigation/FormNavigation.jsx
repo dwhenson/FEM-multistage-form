@@ -11,7 +11,7 @@ import styles from "./FormNavigation.module.css";
 function FormNavigation(formData) {
   const [isOpen, setIsOpen] = React.useState(false);
   const { step, incrementStep, decrementStep } = React.useContext(StepContext);
-  const { isValid } = React.useContext(ValidityContext);
+  const { isValid, isDisabled } = React.useContext(ValidityContext);
 
   function completeForm() {
     setIsOpen(!isOpen);
@@ -24,28 +24,20 @@ function FormNavigation(formData) {
   }
 
   return (
-    <>
-      {step > 1 && (
-        <Button action={decrementStep} disabled={!isValid}>
-          Go Back
-        </Button>
-      )}
+    <div className={styles.navigationWrapper}>
+      {step > 1 && <Button action={decrementStep}>Go Back</Button>}
       {step < 4 && (
-        <Button action={incrementStep} disabled={!isValid}>
+        <Button action={incrementStep} disabled={isDisabled}>
           Next Step
         </Button>
       )}
-      {step === 4 && (
-        <Button action={showModal} disabled={!isValid}>
-          Confirm
-        </Button>
-      )}
+      {step === 4 && <Button action={showModal}>Confirm</Button>}
       <SummaryModal title={"Thank you"} boolean={isOpen} action={completeForm}>
         Thanks for confirming your subscription! We hope you have fun using our
         platform. If you ever need support, please feel free to email us at
         support@loremgaming.com.
       </SummaryModal>
-    </>
+    </div>
   );
 }
 

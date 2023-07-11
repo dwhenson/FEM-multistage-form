@@ -49,11 +49,11 @@ body {
   min-block-size: 100vh;
   overflow-y: scroll;
   background-color: #fff;
-  line-height: 1.6;
+  background-color: red;
+  line-height: 1.1;
   color: #000;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
-  background-color: red;
 }
 
 /* A elements that don't have a class get default styles */
@@ -101,7 +101,6 @@ select {
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {

@@ -1,3 +1,6 @@
-h1 {
-  color: red;
+.form {
+  padding-block: 1.5rem clamp(1rem, 5vw, 2rem);
+  padding-inline: 1rem clamp(0.75rem, 5vw, 1.5rem);
+  border-radius: 1rem;
+  background-color: var(--clr-neutral-100);
 }
