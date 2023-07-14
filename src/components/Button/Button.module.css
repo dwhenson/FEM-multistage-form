@@ -1,3 +1,18 @@
-button:disabled {
-  color: red;
+.button {
+  padding: var(--space-s) var(--space-m);
+  border-radius: 0.25rem;
+  background-color: var(--bg, var(--clr-primary-400));
+  transition: background-color 250ms ease, color 250ms ease;
+  font-weight: 700;
+  color: var(--fg, var(--clr-neutral-100));
+  cursor: pointer;
+}
+
+.button:where(:hover):not(:disabled) {
+  background-color: var(--hv-bg, var(--clr-primary-300));
+  color: var(--hv-fg, var(--clr-neutral-100));
+}
+
+.button:disabled {
+  opacity: 0.5;
 }

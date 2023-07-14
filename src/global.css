@@ -1,4 +1,6 @@
 body {
+  display: grid;
+  place-items: center;
   background-color: var(--clr-neutral-200);
   font-family: var(--ff-body);
   font-size: var(--step-0);
@@ -34,12 +36,16 @@ legend {
   color: var(--clr-neutral-500);
 }
 
-/* :focus-visible {
-  opacity: 1 !important;
-  outline: 4px solid var(--clr-primary-300);
+button {
+  all: unset;
+}
+
+:focus-visible {
+  opacity: 1;
+  outline: 2px dashed var(--clr-primary-300);
   outline-offset: 4px;
 }
 
 :focus:not(:focus-visible) {
   outline: transparent;
-} */
+}

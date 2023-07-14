@@ -5,13 +5,17 @@ import styles from "./Toggle.module.css";
 
 function Toggle({ formData, setFormData }) {
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <label
-        className={styles.Label}
-        htmlFor="frequency"
-        style={{ paddingRight: 15 }}
-      >
-        Yearly
+    <div className={styles.ToggleWrapper}>
+      <label className={styles.label} htmlFor="frequency">
+        <span
+          className={
+            formData.frequency === "monthly"
+              ? `${styles.selected}`
+              : `${styles.notSelected}`
+          }
+        >
+          Monthly
+        </span>
       </label>
       <Switch.Root
         id="frequency"
@@ -26,6 +30,17 @@ function Toggle({ formData, setFormData }) {
       >
         <Switch.Thumb className={styles.SwitchThumb} />
       </Switch.Root>
+      <label className={styles.label} htmlFor="frequency">
+        <span
+          className={
+            formData.frequency === "yearly"
+              ? `${styles.selected}`
+              : `${styles.notSelected}`
+          }
+        >
+          Yearly
+        </span>
+      </label>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import styles from "./FormNavigation.module.css";
 function FormNavigation(formData) {
   const [isOpen, setIsOpen] = React.useState(false);
   const { step, incrementStep, decrementStep } = React.useContext(StepContext);
-  const { isValid, isDisabled } = React.useContext(ValidityContext);
+  const { isDisabled } = React.useContext(ValidityContext);
 
   function completeForm() {
     setIsOpen(!isOpen);
@@ -25,7 +25,19 @@ function FormNavigation(formData) {
 
   return (
     <div className={styles.navigationWrapper}>
-      {step > 1 && <Button action={decrementStep}>Go Back</Button>}
+      {step > 1 && (
+        <Button
+          action={decrementStep}
+          style={{
+            "--bg": "var(--clr-neutral-100",
+            "--fg": "var(--clr-neutral-500)",
+            "--hv-fg": "var(--clr-neutral-400)",
+            "--hv-bg": "var(--clr-neutral-100)",
+          }}
+        >
+          Go Back
+        </Button>
+      )}
       {step < 4 && (
         <Button action={incrementStep} disabled={isDisabled}>
           Next Step

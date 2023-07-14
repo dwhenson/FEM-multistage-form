@@ -2,9 +2,14 @@ import React from "react";
 
 import styles from "./Button.module.css";
 
-function Button({ disabled = false, action, children }) {
+function Button({ disabled = false, style, action, children }) {
   return (
-    <button disabled={disabled} onClick={action}>
+    <button
+      style={style}
+      className={styles.button}
+      disabled={disabled}
+      onClick={action}
+    >
       {children}
     </button>
   );

@@ -1,0 +1,16 @@
+.addon {
+  display: grid;
+  /* place-items: center; */
+  padding: var(--space-s);
+  border: 1px solid var(--clr-neutral-500);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.addon:has(button[aria-checked="true"]) {
+  background-color: var(--clr-neutral-300);
+}
+
+.label {
+  cursor: pointer;
+}

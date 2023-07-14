@@ -1,16 +1,12 @@
-.align-content {
-  --min: var(--space-s);
-  --container-max: 1440px;
-
+#root {
   display: grid;
   grid-template-columns:
-    minmax(var(--min, 1rem), 1fr)
-    minmax(320px, 1440px)
-    minmax(var(--min, 1rem), 1fr);
-  place-items: center;
+    minmax(1rem, 1fr)
+    minmax(320px, 1000px)
+    minmax(1rem, 1fr);
 }
 
-.align-content > * {
+#root > * {
   grid-column: 2;
 }
 
@@ -35,7 +31,7 @@
 .withSideBar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-s);
+  gap: var(--bespoke-gap, var(--space-s));
 }
 
 .withSideBar > :first-child {
@@ -45,5 +41,23 @@
 .withSideBar > :last-child {
   flex-basis: 0;
   flex-grow: 999;
-  min-inline-size: 50%;
+  min-inline-size: var(--max-size, 50%);
+}
+
+/* https://every-layout.dev/layouts/switcher */
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.switcher > * {
+  flex-basis: calc((30rem - 100%) * 999);
+  flex-grow: 1;
+}
+
+.switcher > :nth-last-child(n + 4),
+.switcher > :nth-last-child(n + 4) ~ * {
+  flex-basis: 100%;
 }

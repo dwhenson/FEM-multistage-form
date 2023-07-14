@@ -1,6 +1,11 @@
-/* reset */
-button {
-  all: unset;
+.ToggleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-s);
+  padding: var(--space-s);
+  border-radius: 1rem;
+  background-color: var(--clr-neutral-300);
 }
 
 .SwitchRoot {
@@ -8,16 +13,17 @@ button {
   width: 42px;
   height: 25px;
   border-radius: 9999px;
-  background-color: hotpink;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 2px var(--clr-primary-400);
+  background-color: var(--clr-primary-400);
+  cursor: pointer;
 }
 
 .SwitchRoot:focus {
-  box-shadow: 0 0 0 2px black;
+  box-shadow: 0 0 0 2px var(--clr-primary-200);
 }
 
 .SwitchRoot[data-state="checked"] {
-  background-color: black;
+  background-color: var(--clr-primary-400);
 }
 
 .SwitchThumb {
@@ -25,7 +31,6 @@ button {
   width: 21px;
   height: 21px;
   border-radius: 9999px;
-  box-shadow: 0 2px 2px var(--black-a7);
   background-color: white;
   transform: translateX(2px);
   transition: transform 100ms;
@@ -36,8 +41,6 @@ button {
   transform: translateX(19px);
 }
 
-.Label {
-  font-size: 15px;
-  line-height: 1;
-  color: black;
+.selected {
+  font-weight: 700;
 }
