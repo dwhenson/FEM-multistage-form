@@ -39,10 +39,8 @@ function PersonalInfo({ formData, setFormData }) {
 
   function handleChange(event) {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    if (isValid[event.target.name].verified) {
-      checkValid(event);
-      allowProgress();
-    }
+    checkValid(event);
+    allowProgress();
   }
 
   return (

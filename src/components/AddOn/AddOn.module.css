@@ -1,16 +1,48 @@
 .addon {
   display: grid;
-  /* place-items: center; */
-  padding: var(--space-s);
+  grid-template-columns: min-content 1fr;
   border: 1px solid var(--clr-neutral-500);
   border-radius: 1rem;
+  transition: background-color 250ms ease, border 250ms ease;
   cursor: pointer;
 }
 
 .addon:has(button[aria-checked="true"]) {
+  border: 1px solid var(--clr-primary-300);
   background-color: var(--clr-neutral-300);
 }
 
 .label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+  padding: var(--space-m);
+  padding-inline-start: 0;
   cursor: pointer;
+}
+
+.CheckboxRoot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--clr-primary-300);
+  border-radius: 4px;
+  margin: var(--space-s);
+  background-color: var(--clr-neutral-100);
+  transition: background-color 250ms ease, border 250ms ease;
+}
+
+.CheckboxRoot[data-state="checked"] {
+  background-color: var(--clr-primary-300);
+}
+
+.CheckboxIndicator {
+  color: var(--clr-neutral-100);
+}
+
+.CheckIcon {
+  stroke-width: 5px;
 }

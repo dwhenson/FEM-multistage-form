@@ -3,7 +3,7 @@ import React from "react";
 export const StepContext = React.createContext();
 
 function StepProvider({ children }) {
-  const [step, setStep] = React.useState(3);
+  const [step, setStep] = React.useState(4);
 
   function incrementStep(event) {
     event.preventDefault();

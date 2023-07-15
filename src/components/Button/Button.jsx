@@ -2,11 +2,11 @@ import React from "react";
 
 import styles from "./Button.module.css";
 
-function Button({ disabled = false, style, action, children }) {
+function Button({ disabled = false, style, action, className = "", children }) {
   return (
     <button
       style={style}
-      className={styles.button}
+      className={`${styles.button} ${className}`}
       disabled={disabled}
       onClick={action}
     >

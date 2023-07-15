@@ -14,10 +14,12 @@ function AddOns({ formData, setFormData }) {
         <legend>Add-ons help enhance your gaming experience.</legend>
         {addOnOptions.map(({ id, label, description }) => (
           <AddOn key={id} name={id} data={formData} setData={setFormData}>
-            <p style={{ fontWeight: "700" }}>{label}</p>
-            <p style={{ color: "var(--clr-neutral-500)" }}>{description}</p>
+            <div className="stack">
+              <p style={{ fontWeight: "700" }}>{label}</p>
+              <p style={{ color: "var(--clr-neutral-500)" }}>{description}</p>
+            </div>
             <p style={{ color: "var(--clr-primary-300)" }}>
-              {prices[formData.frequency][id]}/{duration}
+              +${prices[formData.frequency][id]}/{duration}
             </p>
           </AddOn>
         ))}
