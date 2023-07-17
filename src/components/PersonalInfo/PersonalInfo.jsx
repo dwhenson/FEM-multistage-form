@@ -62,7 +62,6 @@ function PersonalInfo({ formData, setFormData }) {
         </Input>
         <Input
           label="email"
-          type="email"
           name="email"
           placeholder="dave.henson@gmail.com"
           value={formData.email}

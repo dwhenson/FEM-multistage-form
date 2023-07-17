@@ -20,6 +20,7 @@ function StepProvider({ children }) {
       value={{ step, setStep, incrementStep, decrementStep }}
     >
       {children}
+      {console.log(step)}
     </StepContext.Provider>
   );
 }
