@@ -2,5 +2,15 @@
   padding-block: 1.5rem clamp(1rem, 5vw, 2rem);
   padding-inline: 1rem clamp(0.75rem, 5vw, 1.5rem);
   border-radius: 1rem;
+  box-shadow: var(--shadow-elevation-high);
+  margin-block-start: calc(var(--space-3xl) * -1);
   background-color: var(--clr-neutral-100);
+  margin-inline: var(--space-s);
+}
+
+@media only screen and (min-width: 625px) {
+  .form {
+    box-shadow: unset;
+    margin-block-start: unset;
+  }
 }

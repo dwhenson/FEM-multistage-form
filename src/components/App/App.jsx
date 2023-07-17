@@ -9,7 +9,7 @@ import styles from "./App.module.css";
 function App() {
   return (
     <StepProvider>
-      <div className="withSideBar">
+      <div className={`withSideBar ${styles.wrapper}`}>
         <ProgressIndicator />
         <Form />
       </div>

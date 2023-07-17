@@ -1,0 +1,80 @@
+.ProgressIndicator {
+  padding-block: var(--space-2xl) var(--space-3xl);
+  box-shadow: var(--shadow-elevation-low);
+  background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-m);
+}
+
+.listItem {
+  margin-inline-start: var(--space-l);
+  font-size: var(--step--1);
+  font-weight: 700;
+  text-transform: uppercase;
+  counter-increment: counter 1;
+}
+
+.listItem::before {
+  content: counter(counter);
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 3em;
+  height: 3em;
+  padding: var(--space-xs);
+  border: 1px solid;
+  border-color: var(--clr-neutral-100);
+  border-radius: 9999px;
+  transform: translate(-100%, -100%);
+  transition: all 250ms ease;
+  line-height: 1;
+  color: var(--clr-neutral-100);
+}
+
+.listItem[aria-current="true"]::before {
+  border-color: var(--clr-primary-100);
+  background-color: var(--clr-primary-100);
+  color: var(--clr-primary-300);
+}
+
+.content {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+@media only screen and (min-width: 625px) {
+  .ProgressIndicator {
+    background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+  }
+
+  .list {
+    flex-direction: column;
+  }
+
+  .listItem::before {
+    transform: translate(-125%, 0);
+  }
+
+  .content {
+    position: unset;
+    width: unset;
+    height: unset;
+    overflow: unset;
+    white-space: unset;
+    clip: unset;
+    clip-path: unset;
+  }
+}

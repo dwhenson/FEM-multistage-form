@@ -37,7 +37,7 @@ function Form() {
         {step === 4 && (
           <ConfirmChoices formData={formData} setFormData={setFormData} />
         )}
-        <FormNavigation formData={formData} />
+        <FormNavigation formData={formData} setFormData={setFormData} />
       </form>
     </ValidityProvider>
   );

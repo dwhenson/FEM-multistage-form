@@ -8,19 +8,31 @@ import { ValidityContext } from "../ValidityProvider";
 
 import styles from "./FormNavigation.module.css";
 
-function FormNavigation(formData) {
+function FormNavigation({ formData, setFormData }) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const { step, incrementStep, decrementStep } = React.useContext(StepContext);
+  const { step, setStep, incrementStep, decrementStep } =
+    React.useContext(StepContext);
   const { isDisabled } = React.useContext(ValidityContext);
 
   function completeForm() {
     setIsOpen(!isOpen);
-    console.log("Sending the data to back end:", formData);
+    setFormData(
+      (formData = {
+        name: "",
+        email: "",
+        phone: "",
+        frequency: "monthly",
+        plan: "arcade",
+        addons: {},
+      })
+    );
+    setStep(1);
   }
 
   function showModal(event) {
     event.preventDefault();
     setIsOpen(true);
+    console.log("Sending the data to back end:", formData);
   }
 
   return (
@@ -44,7 +56,7 @@ function FormNavigation(formData) {
         </Button>
       )}
       {step === 4 && <Button action={showModal}>Confirm</Button>}
-      <SummaryModal title={"Thank you"} boolean={isOpen} action={completeForm}>
+      <SummaryModal title={"Thank you!"} boolean={isOpen} action={completeForm}>
         Thanks for confirming your subscription! We hope you have fun using our
         platform. If you ever need support, please feel free to email us at
         support@loremgaming.com.

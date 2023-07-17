@@ -1,5 +1,7 @@
 .navigationWrapper {
   display: flex;
+  bottom: var(--space-m);
+  justify-content: space-between;
   margin-block-start: var(--space-3xl);
 }
 

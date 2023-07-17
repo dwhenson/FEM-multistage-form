@@ -1,6 +1,5 @@
 .radioWrapper {
   display: grid;
-  place-items: center;
   padding: var(--space-s);
   border: 1px solid var(--clr-neutral-500);
   border-radius: 1rem;

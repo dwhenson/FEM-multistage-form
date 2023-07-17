@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import styles from "./SummaryModal.module.css";
@@ -8,7 +8,7 @@ function SummaryModal({ title, children, boolean, action }) {
     <Dialog.Root open={boolean} onOpenChange={action}>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.DialogOverlay} />
-        <Dialog.Content className={styles.DialogContent}>
+        <Dialog.Content className={`stack ${styles.DialogContent}`}>
           <Dialog.Title className={styles.DialogTitle}>{title}</Dialog.Title>
           <Dialog.Description className={styles.DialogDescription}>
             {children}

@@ -20,10 +20,10 @@
   border-block-end: 2px solid var(--clr-neutral-400);
 }
 
-.listItem:nth-last-of-type(2) {
+/* .listItem:nth-last-of-type(2) {
   padding-block-start: var(--space-m);
   margin-block-start: 0;
-}
+} */
 
 .Button {
   width: fit-content;

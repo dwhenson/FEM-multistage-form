@@ -41,7 +41,7 @@
 .withSideBar > :last-child {
   flex-basis: 0;
   flex-grow: 999;
-  min-inline-size: var(--max-size, 55%);
+  min-inline-size: var(--max-size, 60%);
 }
 
 /* https://every-layout.dev/layouts/switcher */
@@ -60,4 +60,14 @@
 .switcher > :nth-last-child(n + 4),
 .switcher > :nth-last-child(n + 4) ~ * {
   flex-basis: 100%;
+}
+
+/* https://every-layout.dev/layouts/box/ */
+
+.box {
+  padding: var(--padding, var(--space-m));
+  border: var(--border-thin) solid;
+  border-radius: var(--radius, var(--space-xs));
+  background-color: var(--bg, var(--clr-neutral-100));
+  color: var(--fg, var(--clr-primary-400));
 }

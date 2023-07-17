@@ -1,0 +1,11 @@
+.wrapper {
+  padding: var(--space-s);
+  border-radius: 0.5rem;
+  background-color: var(--clr-neutral-100);
+}
+
+@media only screen and (min-width: 625px) {
+  .wrapper {
+    box-shadow: var(--shadow-elevation-medium);
+  }
+}
