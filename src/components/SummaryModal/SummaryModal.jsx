@@ -21,3 +21,5 @@ function SummaryModal({ title, children, boolean, action }) {
     </Dialog.Root>
   );
 }
+
+export default SummaryModal;
