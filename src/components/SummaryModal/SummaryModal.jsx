@@ -1,6 +1,8 @@
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
+import ThanksIcon from "../ThanksIcon";
+
 import styles from "./SummaryModal.module.css";
 
 function SummaryModal({ title, children, boolean, action }) {
@@ -9,10 +11,7 @@ function SummaryModal({ title, children, boolean, action }) {
       <Dialog.Portal>
         <Dialog.Overlay className={styles.DialogOverlay} />
         <Dialog.Content className={`stack ${styles.DialogContent}`}>
-          <img
-            src="./src/assets/images/icon-thank-you.svg"
-            style={{ maxWidth: "4rem", marginInline: "auto" }}
-          />
+          {/* <ThanksIcon style={{ alignSelf: "center", maxWidth: "4rem" }} /> */}
           <Dialog.Title className={styles.DialogTitle}>{title}</Dialog.Title>
           <Dialog.Description className={styles.DialogDescription}>
             {children}
@@ -22,5 +21,3 @@ function SummaryModal({ title, children, boolean, action }) {
     </Dialog.Root>
   );
 }
-
-export default SummaryModal;
