@@ -18,13 +18,13 @@ function PlanSelect({ formData, setFormData }) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  function Icons(plan) {
+  function Icons(icon) {
     const components = {
       arcade: ArcadeIcon,
       pro: ProIcon,
       advanced: AdvancedIcon,
     };
-    const PlanIcon = components[plan];
+    const PlanIcon = components[icon];
     return <PlanIcon />;
   }
 
